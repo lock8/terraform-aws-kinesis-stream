@@ -52,7 +52,7 @@ module "kinesis-stream" {
 | kms\_key\_id | The GUID for the customer-managed KMS key to use for encryption. You can also use a Kinesis-owned master key by specifying the alias alias/aws/kinesis. | `string` | `""` | no |
 | name | A name to identify the stream. This is unique to the AWS account and region the Stream is created in. | `string` | n/a | yes |
 | retention\_period | Length of time data records are accessible after they are added to the stream. The maximum value of a stream's retention period is 168 hours. Minimum value is 24. Default is 24. | `number` | `24` | no |
-| shard\_count | The number of shards that the stream will use | `number` | `1` | no |
+| shard\_count | The number of shards that the stream will use, if you pass *null* then it will create on-demand stream  | `number` | n/a | yes |
 | shard\_level\_metrics | A list of shard-level CloudWatch metrics which can be enabled for the stream. | `list(string)` | `[]` | no |
 | tags | A mapping of tags to assign to the resource. | `map` | n/a | yes |
 
